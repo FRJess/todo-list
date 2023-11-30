@@ -1,0 +1,11 @@
+<p>
+  New task: {{title}}
+</p>
+
+<input #inputElementRef
+        [value]="title"
+        (keyup.enter)="changeTitle(getInputValue($event))">
+
+<button (click)="changeTitle(inputElementRef.value)">
+  Save
+</button>
