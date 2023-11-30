@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -8,19 +8,21 @@ import { CommonModule } from '@angular/common';
   templateUrl: './input-button-unit.component.html',
   styleUrl: './input-button-unit.component.scss'
 })
+
 export class InputButtonUnitComponent {
-  title = 'Learn about components';
 
   constructor() {
-    this.title = 'ngGirls workshop'
   }
 
-  changeTitle (newTitle: string): void {
-    this.title = newTitle;
+  submitValue(input:HTMLInputElement): void {
+    this.submit.emit(input.value);
+    input.value = '';
   }
 
   getInputValue(event: Event) {
     return (event.target as HTMLInputElement).value;
   }
+
+  @Output() submit: EventEmitter<string> = new EventEmitter<string>();
 
 }
