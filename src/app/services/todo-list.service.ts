@@ -16,8 +16,12 @@ export class TodoListService {
   ];
 
   constructor() {}
-  
-    getTodoList(): TodoItem[] {
-      return this.todoList;
-    }
+
+  getTodoList(): TodoItem[] {
+    return this.todoList;
+  }
+
+  addItem(item: TodoItem){
+    this.todoList.push(item);
+  }
 }

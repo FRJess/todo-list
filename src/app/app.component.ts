@@ -23,6 +23,6 @@ export class AppComponent {
   }
 
   addItem(name: string){
-    this.todoList.push({name});
+    this.todoListService.addItem({name});
   }
 }
