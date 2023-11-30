@@ -1,11 +1,7 @@
-<p>
-  New task: {{title}}
-</p>
+<input class="todo-input"
+        #inputElementRef
+        (keyup.enter)="submitValue(inputElementRef)">
 
-<input #inputElementRef
-        [value]="title"
-        (keyup.enter)="changeTitle(getInputValue($event))">
-
-<button (click)="changeTitle(inputElementRef.value)">
+<button class="btn" (click)="submitValue(inputElementRef)">
   Save
 </button>
